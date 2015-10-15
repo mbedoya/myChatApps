@@ -22,6 +22,7 @@ angular.module('starter.controllers', [])
         };
 
         $scope.$on('$ionicView.beforeEnter', function(){
+            hipmob.show();
             hipmob.set_context("Chats");
         });
     })
