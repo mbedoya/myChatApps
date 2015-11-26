@@ -3,7 +3,9 @@ angular.module('starter.controllers', [])
     .controller('DashCtrl', function($scope) {
 
         $scope.$on('$ionicView.beforeEnter', function(){
-            hipmob.set_context("Dash");
+            $zopim(function() {
+                $zopim.livechat.say("Dash");
+            });
         });
     })
 
@@ -22,8 +24,9 @@ angular.module('starter.controllers', [])
         };
 
         $scope.$on('$ionicView.beforeEnter', function(){
-            hipmob.show();
-            hipmob.set_context("Chats");
+            $zopim(function() {
+                $zopim.livechat.say("Chats");
+            });
         });
     })
 
@@ -31,7 +34,9 @@ angular.module('starter.controllers', [])
         $scope.chat = Chats.get($stateParams.chatId);
 
         $scope.$on('$ionicView.beforeEnter', function(){
-            hipmob.set_context("Chat Detail.");
+            $zopim(function() {
+                $zopim.livechat.say("Chat Detail");
+            });
         });
 
 
@@ -43,6 +48,8 @@ angular.module('starter.controllers', [])
         };
 
         $scope.$on('$ionicView.beforeEnter', function(){
-            hipmob.set_context("Account");
+            $zopim(function() {
+                $zopim.livechat.say("Account");
+            });
         });
     });
